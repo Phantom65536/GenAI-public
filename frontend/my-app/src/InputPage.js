@@ -3,7 +3,7 @@ import EndingSection from './Sections/EndingSection.js'
 import TopicSection from './Sections/TopicSection.js'
 import React, { useState,useEffect } from 'react';
 
-function InputPage({Title,Topic,Pairs,Ending}){
+function InputPage({Title,Topic,Pairs,Ending,open,close,startWriting}){
   const [descData, setDescData] = useState({
     TopicDesc: '',
     ImportantDetailDesc: '',
@@ -27,14 +27,7 @@ function InputPage({Title,Topic,Pairs,Ending}){
     <TopicSection value={Topic} description={descData.TopicDesc}/>
     <DetailSection value={Pairs} description1={descData.ImportantDetailDesc} description2={descData.DetailedExaminationDesc}/>
     <EndingSection value={Ending} description={descData.EndingDesc}/>
-  
-  
-  
-  
-  
-  
-  
-  
+    <button onClick={startWriting}>Start Writing</button>
   </>
   )
 }
