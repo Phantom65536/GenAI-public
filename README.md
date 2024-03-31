@@ -16,3 +16,10 @@ To address this, **ScribAid** is designed so Gemini AI only offers feedback on e
   - Start the web server by running `npm start`
 
 
+## Structure of program
+Backend:
+- model.py includes all functions used to communicate with the generative AI models
+- server.py includes all functions run on the flask server
+- server-test.py includes all backend testing
+
+  
