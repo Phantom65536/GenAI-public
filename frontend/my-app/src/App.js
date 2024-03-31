@@ -12,7 +12,7 @@ const mockData={
 }
 
 function App() {
-  const ele = <div>{/*<StudentListPage {...mockAssignmentList}/> <InputWritingPage {...mockData}/>*/<FeedbackPage {...mockData}/> }</div>;
+  const ele = <div>{/*<StudentListPage {...mockAssignmentList}/> <InputWritingPage {...mockData}/>*/<InputWritingPage {...mockData}/> }</div>;
 
   return (
     <>

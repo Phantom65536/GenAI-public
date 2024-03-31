@@ -41,7 +41,7 @@ function InputPage({RAF,Title,Topic,Pairs,Ending,open,close,startWriting}){
       }).catch(error => {
       // Handle any errors
       console.error(error)
-    })
+    }).then(setDescData(Description))
     const object1 = new FormData()
     object1.append('topic',process.env.REACT_APP_TOPIC.replace("***", '\n'))
     console.log(object.get("topic"))
@@ -60,8 +60,7 @@ function InputPage({RAF,Title,Topic,Pairs,Ending,open,close,startWriting}){
       }).catch(error => {
       // Handle any errors
       console.error(error)
-    })
-    setDescData(Description);
+    }).then(setDescData(Description))
   }, []);
   return (
   <>
