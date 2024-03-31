@@ -1,20 +1,20 @@
+import { useEffect } from "react"
 function FeedbackPage(props){
   useEffect(() => {/*send the request for the the description */
     const object = new FormData()
-    object.append('topic',process.env.REACT_APP_TOPIC.replace("***", '\n'))
+    object.append('grade', 8)/*hardcoded for demo */
+    object.append('writing_topic',process.env.REACT_APP_TOPIC.replace("***", '\n'))
+    object.append('essay',props.essay)
     console.log(object.get("topic"))
     console.log(JSON.stringify(object))
-    console.log(process.env.REACT_APP_URL+"table")
-    fetch(process.env.REACT_APP_URL+"table",{
+    console.log(process.env.REACT_APP_URL+"essay_feedback")
+    fetch(process.env.REACT_APP_URL+"essay_feedback",{
       method:'POST',
       body: object
     }).then(response => response.json()).then(
       result => {
         console.log(result);
-        Description.TopicDesc=result.T
-        Description.ImportantDetailDesc=result.I
-        Description.DetailedExaminationDesc=result.D
-        Description.EndingDesc=result.E
+        
       }).catch(error => {
       // Handle any errors
       console.error(error)
