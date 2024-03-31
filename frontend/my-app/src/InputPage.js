@@ -34,12 +34,13 @@ function InputPage({RAF,Title,Topic,Pairs,Ending,open,close,startWriting}){
       result => {
         console.log("message back! (table)")
         console.log(result);
-        Description=descData
-        Description.TopicDesc=result.T
-        Description.ImportantDetailDesc=result.I
-        Description.DetailedExaminationDesc=result.D
-        Description.EndingDesc=result.E
-        setDescData(Description)
+        setDescData({
+          ...descData,
+          TopicDesc:result.T,
+          ImportantDetailDesc:result.I,
+          DetailedExaminationDesc:result.D,
+          EndingDesc:result.E
+        })
       }).catch(error => {
       // Handle any errors
       console.error(error)
@@ -56,11 +57,13 @@ function InputPage({RAF,Title,Topic,Pairs,Ending,open,close,startWriting}){
       result => {
         console.log("message back! (table raft)")
         console.log(result);
-        Description=descData
-        Description.RoleDesc=result.R
-        Description.AudienceDesc=result.A
-        Description.FormatDesc=result.F
-        setDescData(Description)
+        
+        setDescData({
+          ...descData,
+          RoleDesc:result.R,
+          AudienceDesc:result.A,
+          FormatDesc:result.F,
+        })
       }).catch(error => {
       // Handle any errors
       console.error(error)
