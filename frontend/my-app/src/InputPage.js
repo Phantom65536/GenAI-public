@@ -38,10 +38,11 @@ function InputPage({RAF,Title,Topic,Pairs,Ending,open,close,startWriting}){
         Description.ImportantDetailDesc=result.I
         Description.DetailedExaminationDesc=result.D
         Description.EndingDesc=result.E
+        setDescData(Description)
       }).catch(error => {
       // Handle any errors
       console.error(error)
-    }).then(setDescData(Description))
+    })
     const object1 = new FormData()
     object1.append('topic',process.env.REACT_APP_TOPIC.replace("***", '\n'))
     console.log(object.get("topic"))
@@ -57,10 +58,11 @@ function InputPage({RAF,Title,Topic,Pairs,Ending,open,close,startWriting}){
         Description.RoleDesc=result.R
         Description.AudienceDesc=result.A
         Description.FormatDesc=result.F
+        setDescData(Description)
       }).catch(error => {
       // Handle any errors
       console.error(error)
-    }).then(setDescData(Description))
+    })
   }, []);
   return (
   <>
