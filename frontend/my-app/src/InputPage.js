@@ -21,7 +21,6 @@ function InputPage({RAF,Title,Topic,Pairs,Ending,open,close,startWriting}){
       DetailedExaminationDesc: "Very detailed!",
       EndingDesc: "Conclude da things"
     };
-    var Description=mockDescription
     const object = new FormData()
     object.append('topic',process.env.REACT_APP_TOPIC.replace("***", '\n'))
     console.log(object.get("topic"))
@@ -44,7 +43,7 @@ function InputPage({RAF,Title,Topic,Pairs,Ending,open,close,startWriting}){
       }).catch(error => {
       // Handle any errors
       console.error(error)
-    })
+    },[])
     const object1 = new FormData()
     object1.append('topic',process.env.REACT_APP_TOPIC.replace("***", '\n'))
     console.log(object.get("topic"))
@@ -57,7 +56,6 @@ function InputPage({RAF,Title,Topic,Pairs,Ending,open,close,startWriting}){
       result => {
         console.log("message back! (table raft)")
         console.log(result);
-        
         setDescData({
           ...descData,
           RoleDesc:result.R,
