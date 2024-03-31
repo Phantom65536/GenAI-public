@@ -2,6 +2,7 @@ import './App.css';
 import FeedbackPage from './FeedbackPage';
 import StudentListPage from './StudentListPage';
 import InputWritingPage from './InputWritingPage';
+import CreatePage from './CreatePage';
 const mockData={
   RAF: ["main character", "my fans", "Essay"],
   Title: "Fun things in Canada",
@@ -12,7 +13,7 @@ const mockData={
 }
 const mockAssignmentList={names:["Peter","Mark","Tom","Jerry","Marie"],mockData}
 function App() {
-  const ele = <div>{/*<StudentListPage {...mockAssignmentList}/> <InputWritingPage {...mockData}/>*/<InputWritingPage {...mockData}/> }</div>;
+  const ele = <div>{/*<StudentListPage {...mockAssignmentList}/> <InputWritingPage {...mockData}/>*/<CreatePage {...mockData}/> }</div>;
   return (
     <>
       <div>
