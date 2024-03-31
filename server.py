@@ -1,8 +1,11 @@
 from flask import Flask, request
+from dotenv import load_dotenv
+from model import *
 
 app = Flask(__name__)
 
-from model import *
+load_dotenv(".env")
+fetched_api_key = os.getenv("IMG_API_KEY")
 
 llm = init()
 
@@ -50,6 +53,32 @@ def essay_feedback():
     writing_topic = request.form['writing_topic']
     essay = request.form['essay']
     return eval_chain(llm, grade, writing_topic, essay, verbose=True)
+
+@app.post("/generate_image")
+def generate_image():
+    prompt = """
+    Global warming has become a serious threat to our planet. Explain what we can do as citizens to reduce the effect of global warming. You may want to consider factors, such as 
+    - recycling
+    - the impact of fossil fuels (oil, gas and coal)
+    - the impact of consumerism (buying things)
+    Generate some funny and inspiring images about this topic.
+    """
+
+    response = requests.post(
+        f"https://api.stability.ai/v2beta/stable-image/generate/core",
+        headers={
+            "authorization": fetched_api_key,
+            "accept": "application/json"
+        },
+        files={
+            "none": ''
+        },
+        data={
+            "prompt": prompt,
+            "output_format": "png",
+        },
+    )
+    return response.json()
 
 @app.route("/")
 def hello():
