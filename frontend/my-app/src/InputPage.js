@@ -34,6 +34,7 @@ function InputPage({RAF,Title,Topic,Pairs,Ending,open,close,startWriting}){
       result => {
         console.log("message back! (table)")
         console.log(result);
+        Description=descData
         Description.TopicDesc=result.T
         Description.ImportantDetailDesc=result.I
         Description.DetailedExaminationDesc=result.D
@@ -55,6 +56,7 @@ function InputPage({RAF,Title,Topic,Pairs,Ending,open,close,startWriting}){
       result => {
         console.log("message back! (table raft)")
         console.log(result);
+        Description=descData
         Description.RoleDesc=result.R
         Description.AudienceDesc=result.A
         Description.FormatDesc=result.F
