@@ -1,6 +1,7 @@
+import ReactMarkdown from 'react-markdown'
 function Comment({comment}){
   return (<>
-    <div>{comment}</div>
+    <ReactMarkdown>{comment}</ReactMarkdown>
   </>)
 }
 export default Comment

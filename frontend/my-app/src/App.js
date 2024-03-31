@@ -3,6 +3,7 @@ import './App.css';
 import InputWritingPage from './InputWritingPage.js';
 
 const mockData={
+  RAF: ["main character", "my fans", "Essay"],
   Title: "Fun things in Canada",
   Topic: "Top 20 ways to leave Canada",
   Pairs: [["pt1", "ela1"], ["pt2", "ela2"], ["pt3", "ela3"]],
