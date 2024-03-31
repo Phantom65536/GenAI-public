@@ -21,6 +21,7 @@ function InputPage({RAF,Title,Topic,Pairs,Ending,open,close,startWriting}){
       DetailedExaminationDesc: "Very detailed!",
       EndingDesc: "Conclude da things"
     };
+    var Description=mockDescription
     const object = new FormData()
     object.append('topic',process.env.REACT_APP_TOPIC.replace("***", '\n'))
     console.log(object.get("topic"))
@@ -31,9 +32,12 @@ function InputPage({RAF,Title,Topic,Pairs,Ending,open,close,startWriting}){
       body: object
     }).then(response => response.json()).then(
       result => {
-        console.log("message back!")
+        console.log("message back! (table)")
         console.log(result);
-
+        Description.TopicDesc=result.T
+        Description.ImportantDetailDesc=result.I
+        Description.DetailedExaminationDesc=result.D
+        Description.EndingDesc=result.E
       }).catch(error => {
       // Handle any errors
       console.error(error)
@@ -42,20 +46,22 @@ function InputPage({RAF,Title,Topic,Pairs,Ending,open,close,startWriting}){
     object1.append('topic',process.env.REACT_APP_TOPIC.replace("***", '\n'))
     console.log(object.get("topic"))
     console.log(JSON.stringify(object1))
-    console.log(process.env.REACT_APP_URL+"table")
-    fetch(process.env.REACT_APP_URL+"table",{
+    console.log(process.env.REACT_APP_URL+"table_raft")
+    fetch(process.env.REACT_APP_URL+"table_raft",{
       method:'POST',
       body: object1
     }).then(response => response.json()).then(
       result => {
-        console.log("message back!")
+        console.log("message back! (table raft)")
         console.log(result);
-
+        Description.RoleDesc=result.R
+        Description.AudienceDesc=result.A
+        Description.FormatDesc=result.F
       }).catch(error => {
       // Handle any errors
       console.error(error)
     })
-    setDescData(mockDescription);
+    setDescData(Description);
   }, []);
   return (
   <>
