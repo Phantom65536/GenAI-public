@@ -1,0 +1,14 @@
+.student-list {
+  background-color: lightblue;
+}
+
+.student {
+  background-color: lightblue;
+  padding: 10px;
+}
+
+.separator {
+  height: 2px;
+  background-color: white;
+  margin: 1px 0;
+}

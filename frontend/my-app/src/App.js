@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
-import InputWritingPage from './InputWritingPage.js';
-
+import FeedbackPage from './FeedbackPage';
+import StudentListPage from './StudentListPage';
+import InputWritingPage from './InputWritingPage';
 const mockData={
   RAF: ["main character", "my fans", "Essay"],
   Title: "Fun things in Canada",
   Topic: "Top 20 ways to leave Canada",
   Pairs: [["pt1", "ela1"], ["pt2", "ela2"], ["pt3", "ela3"]],
-  Ending: "In conclusion, Canada is a good place to leave"
+  Ending: "In conclusion, Canada is a good place to leave",
+  writing:""
 }
 
+const mockAssignmentList={names:["Peter","Mark","Tom","Jerry","Marie"],mockData}
+
 function App() {
+  const ele = <div>{/*<StudentListPage {...mockAssignmentList}/>*/ <InputWritingPage {...mockData}/> }</div>;
+
   return (
     <>
-    <div>
-    <InputWritingPage {...mockData}/>
-    </div>
+      <div>
+        {ele}
+      </div>
     </>
-    );
-  }
+  );
+}
 
 export default App;

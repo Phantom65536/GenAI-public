@@ -1,8 +1,10 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+import Comment from "./Sections/Comment";
 function FeedbackPage(props){
+  const [comment,setComment]=useState("");
   useEffect(() => {/*send the request for the the description */
     const object = new FormData()
-    object.append('grade', 8)/*hardcoded for demo */
+    object.append('grade', 8)
     object.append('writing_topic',process.env.REACT_APP_TOPIC.replace("***", '\n'))
     object.append('essay',props.essay)
     console.log(object.get("topic"))
@@ -14,7 +16,7 @@ function FeedbackPage(props){
     }).then(response => response.json()).then(
       result => {
         console.log(result);
-        
+        setComment(result.feedback)
       }).catch(error => {
       // Handle any errors
       console.error(error)
@@ -25,7 +27,9 @@ function FeedbackPage(props){
   <div>
   {props.Title} and other stuff, too lazy to type for skeleton 
   </div>
-  <div>NOW EVALUATE!</div>
+  <div>Evaluation</div>
+  {props.writing}
+  <Comment comment={comment}/>
   <button onClick={props.close}>Finish Viewing</button>
   </>)
 }

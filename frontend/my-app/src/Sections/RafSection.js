@@ -8,10 +8,11 @@ function RafSection({value,description1,description2,description3}){
   const object = new FormData()
   object.append('topic',value)
   object.append('component',1)
+  object.append("response",value)
   console.log(object.get("topic"))
   console.log(JSON.stringify(object))
   console.log(process.env.REACT_APP_URL+"table_feedback_raft")
-  fetch(process.env.REACT_APP_URL+"table_feedback_rafft",{
+  fetch(process.env.REACT_APP_URL+"table_feedback_raft",{
     method:'POST',
     body: object
   }).then(response => response.json()).then(
