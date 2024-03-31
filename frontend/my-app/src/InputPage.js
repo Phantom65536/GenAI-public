@@ -71,7 +71,6 @@ function InputPage({RAF,Title,Topic,Pairs,Ending,open,close,startWriting}){
   // }, []);
   return (
   <>
-    <div>I am a page!</div>
     <div>My topic is: {Title}</div>
     <RafSection value={RAF} description1={"What role will you be taking on in this writing task?"} description2={"Who are you writing this piece for?"} description3={"What type of writing will you be using to convey your message?"}/>
     <TopicSection value={Topic} description={"Global warming poses a grave threat to our planet, and as responsible citizens, we must take collective action to mitigate its effects."}/>

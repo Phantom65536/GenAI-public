@@ -1,6 +1,7 @@
 import './InputBox.css';
 import InputBox from './InputBox.js';
 import Comment from './Comment.js';
+import Description from './Description.js';
 import { useState } from 'react';
 function RafSection({value,description1,description2,description3}){
   const [comment,setComment]=useState("")
@@ -31,18 +32,18 @@ function RafSection({value,description1,description2,description3}){
     <button onClick={clickFunction}>Evaluate</button> 
     <div style={{ display:"inline-block"}}>   
       <div>Role</div>
-      <div>{description1}</div>
+      <div><Description description={description1}/></div>
       <InputBox value={value[0]}/>
     </div>
     <div style={{ display:"inline-block", marginLeft: '10px' }}>    
       <div>Audience</div>
-      <div>{description2}</div>
+      <div><Description description={description2}/></div>
       <InputBox value={value[1]}/>
       {/*button can be put here? */}
     </div>
     <div style={{ display:"inline-block", marginLeft: '10px' }}>    
       <div>Format</div>
-      <div>{description3}</div>
+      <div><Description description={description3}/></div>
       <InputBox value={value[2]}/>
       {/*button can be put here? */}
     </div>
