@@ -10,10 +10,9 @@ const mockData={
   Ending: "In conclusion, Canada is a good place to leave",
   writing:"This is a good essay.\nThis is a good essay.\nThis is a good essay.\nThis is a good essay.\n"
 }
-
+const mockAssignmentList={names:["Peter","Mark","Tom","Jerry","Marie"],mockData}
 function App() {
   const ele = <div>{/*<StudentListPage {...mockAssignmentList}/> <InputWritingPage {...mockData}/>*/<InputWritingPage {...mockData}/> }</div>;
-
   return (
     <>
       <div>
