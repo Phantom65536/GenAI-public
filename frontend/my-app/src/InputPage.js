@@ -69,7 +69,6 @@ function InputPage({RAF,Title,Topic,Pairs,Ending,open,close,startWriting}){
   }, []);
   return (
   <>
-    <div>I am a page!</div>
     <div>My topic is: {Title}</div>
     <RafSection value={RAF} description1={descData.RoleDesc} description2={descData.AudienceDesc} description3={descData.FormatDesc}/>
     <TopicSection value={Topic} description={descData.TopicDesc}/>
