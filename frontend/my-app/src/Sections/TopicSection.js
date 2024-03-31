@@ -7,9 +7,10 @@ function TopicSection({value,description}){
   
   function clickFunction(){/*send the value to backend, update the comment */
     const object={
-      student_profile:process.env.STUDENT_PROFILE,
-      topic:value
+      topic:value,
+      student_profile:process.env.STUDENT_PROFILE
     }
+    console.log(object)
     console.log(JSON.stringify(object))
     console.log(process.env.REACT_APP_URL+"suggestion")
     fetch(process.env.REACT_APP_URL+"suggestion", {

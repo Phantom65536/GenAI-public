@@ -12,6 +12,9 @@ function InputPage({Title,Topic,Pairs,Ending,open,close,startWriting}){
   });
   useEffect(() => {/*send the request for the the description */
     const mockDescription = {
+      RoleDesc:"What role will be there",
+      AudienceDesc:"Who will read this",
+      FormatDesc:"In what format?",
       TopicDesc: "Thing you want to say",
       ImportantDetailDesc: "Very important!",
       DetailedExaminationDesc: "Very detailed!",
