@@ -1,5 +1,3 @@
-he README should effectively communicate what your project is, how to set it up, and any other necessary documentation to understand its structure and functionality.
-
 ## What our project is
 The core of our project integrates Google's Gemini GenAI with **proven research methods**, **TIDE** and **RAFT** (which follows the SRSD framework as discussed in this [paper](https://journals.sagepub.com/doi/full/10.1111/ldrp.12140)) to assist with organizing thoughts and structuring arguments, overcoming the difficult challenges of writing. 
 
@@ -16,3 +14,5 @@ To address this, **ScribAid** is designed so Gemini AI only offers feedback on e
   - go to frontend folder by `cd frontend`
   - Download neccesary javascript packages using `npm install`
   - Start the web server by running `npm start`
+
+
