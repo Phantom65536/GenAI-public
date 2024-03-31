@@ -22,4 +22,7 @@ Backend:
 - server.py includes all functions run on the flask server
 - server-test.py includes all backend testing
 
-  
+Frontend:
+
+- App.js entry point of the web server
+- Sections for diifferent component
