@@ -1,8 +1,10 @@
 from flask import Flask, request
+from flask_cors import CORS
 from dotenv import load_dotenv
 from model import *
 
 app = Flask(__name__)
+CORS(app)
 
 load_dotenv(".env")
 fetched_api_key = os.getenv("IMG_API_KEY")
@@ -43,9 +45,8 @@ def table_feedback():
 @app.post("/table_feedback_raft")
 def table_feedback_raft():
     topic = request.form['topic']
-    i = int(request.form['component'])
     student_responses= request.form['response']
-    return feedback_raft_chain(llm, topic, i, student_responses)
+    return feedback_raft_chain(llm, topic, student_responses)
 
 @app.post("/essay_feedback")
 def essay_feedback():

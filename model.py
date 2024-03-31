@@ -224,24 +224,24 @@ RAFT_components = [
 ]
 
 # %%
-def feedback_raft_chain(llm, topic, component, student_response, verbose=False):
+def feedback_raft_chain(llm, topic, student_response, verbose=False):
     general_feedback_prompt = """
-    You are a teaching assistant. Your student is doing a Graphic Organizer for RAFT (Role, Audience, Format, Topic).
+    You are a teaching assistant. Your student is doing a Graphic Organizer for RAFT (Role, Audience, Format).
     --------------------------------------------------------------
     The topic is as follows:
     {topic}
     --------------------------------------------------------------
-    The student has written the following for the component {component}:
+    The student has written the following:
     {response}
     --------------------------------------------------------------
     Please provide feedback on the response. Remember to be concise and clear, but give concrete suggestions according to the student's response. 
     Write in point form. 
     Feedbacks are meant to be encouraging. Remember you are talking to the student.
-    Please give your feedback in two sessions: Stremgths and Areas for Improvement. Give suggestions but do not rewrite the response.
+    Please give your feedback in two sessions: Stremgths and Areas for Improvement. Give suggestions but do not rewrite the response and don't give examples.
     """
     table_prompt = PromptTemplate.from_template(general_feedback_prompt)
     table_chain = LLMChain(llm=llm, prompt=table_prompt, verbose=verbose)
-    feedback = table_chain.run(topic=topic, component=RAFT_components[component], response=student_response)
+    feedback = table_chain.run(topic=topic, response=student_response)
     feedback_dict = {
         "feedback": feedback
     }
